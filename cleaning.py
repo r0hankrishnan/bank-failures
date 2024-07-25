@@ -35,6 +35,8 @@ inner.columns
 #Drop unnecessary cols
 dropCols = ["BankName", "ClosingDate", "Press Release (PR)", "Acquirer & Transaction"]
 bankFailures = inner.drop(dropCols, axis = 1)
+bankFailures["Country"] = "US"
+
 
 #Save in directory
 bankFailures.to_csv("./data/cleaned/bankfailures.csv")
